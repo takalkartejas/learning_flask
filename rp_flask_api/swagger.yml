@@ -32,3 +32,17 @@ paths:
       responses:
         "200":
           description: "successfully read people list"
+components:
+  schemas:
+    Person:
+      type: "object"
+      # required indicates which properties are required *
+      # this schema will be represented as a dictionary in python code later
+      required:
+        - lname
+      properties:
+        fname:
+          type: "string"
+        lname:
+          type: "string"
+# ...
