@@ -41,4 +41,5 @@ Create a REST API to keep track of the notes for people that visit thoughout the
 5. create a directory called templates and create home.html in the dir.
 6. run app.py using command python3 app.py
 7. check the output on browser
-8. Add a swagger.yml file to define open api
+8. Add a swagger.yml file to define open api:- it is called api configuration file
+9. Use connexion to refer to the swagger.yml file inside app.py
