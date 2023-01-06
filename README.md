@@ -35,3 +35,6 @@ Create a REST API to keep track of the notes for people that visit thoughout the
 ### Learning steps
 
 1. Create a folder named rp_flask_api which will be our root folder
+2. create a virtual enviornment inside the folder so that all installations are folder specific
+3. add dependencies
+4. create app.py
