@@ -38,3 +38,5 @@ Create a REST API to keep track of the notes for people that visit thoughout the
 2. create a virtual enviornment inside the folder so that all installations are folder specific
 3. add dependencies
 4. create app.py
+5. create a directory called templates and create home.html in the dir.
+6. 
