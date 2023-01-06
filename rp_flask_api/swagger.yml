@@ -1,0 +1,25 @@
+# swagger.yml
+
+openapi: 3.0.0
+info:
+  title: "RP Flask REST API"
+  description: "An API about people and notes"
+  version: "1.0.0"
+
+# By providing "/api" as the value of url, you’ll be able to access all of your API paths relative to http://localhost:8000/api.
+servers:
+  - url: "/api"
+
+paths:
+  # /people: The relative URL of your API endpoint
+  /people:
+    get:
+      operationId: "people.read_all"
+      tags:
+      - "People"
+      #the summary can be seen in the swagger docs infront of get /people
+      summary: "Read the list of people"
+      #the responses can also be seen in docs opening get
+      responses:
+        "200":
+          description: "successfully read people list"
