@@ -12,8 +12,17 @@ servers:
 
 paths:
   # /people: The relative URL of your API endpoint
+  #URL endpoint that you can access at http://localhost:8000/api/people
   /people:
     get:
+    # operationId: The Python function that’ll respond to the request
+    #operationId must contain a string. Connexion will use ...
+    #"people.read_all" to find a Python function named ...
+    #read_all() in a people module of your project.
+    # tags: The tags assigned to this endpoint, which allow you to group the operations in the UI
+    # summary: The UI display text for this endpoint
+    # responses: The status codes that the endpoint responds with
+
       operationId: "people.read_all"
       tags:
       - "People"
