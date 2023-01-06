@@ -43,3 +43,8 @@ Create a REST API to keep track of the notes for people that visit thoughout the
 7. check the output on browser
 8. Add a swagger.yml file to define open api:- it is called api configuration file
 9. Use connexion to refer to the swagger.yml file inside app.py
+10. In the swagger.yml file, you configured Connexion with the operationId value "people.read_all". So, when the API gets an HTTP request for GET /api/people, your Flask app calls a read_all() function within a people module. 
+11. To make this work, create a people.py file with a read_all()s
+12. Now we look at http://localhost:8000/api/people, we can see the list of people
+13. go to http://localhost:8000/api/ui to see the swagger interface
+14. create a schema for a person in swagger.api
