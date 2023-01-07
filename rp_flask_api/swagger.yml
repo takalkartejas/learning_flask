@@ -32,6 +32,28 @@ paths:
       responses:
         "200":
           description: "successfully read people list"
+    post:
+     # we need to add create() funtion in people.py to execute it
+      operationId: "people.create"
+      tags:
+        - People
+      summary: "Create a person"
+      # we request body to server
+      requestBody:
+          description: "Person to create"
+          required: True
+          content:
+          #Inside of content, you define application/json ... 
+          #as the data exchange format of your API.
+            application/json:
+              schema:
+                x-body-name: "person"
+                $ref: "#/components/schemas/Person"
+      responses:
+      #Search for mozilla documentation for http respone status codes
+        "201":
+          description: "Successfully created person"
+
 components:
   schemas:
     Person:
@@ -45,4 +67,5 @@ components:
           type: "string"
         lname:
           type: "string"
+    
 # ...
