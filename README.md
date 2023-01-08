@@ -53,3 +53,4 @@ Create a REST API to keep track of the notes for people that visit thoughout the
 17. check if the method works at http://localhost:8000/api/ui
 18. Add get method to get name using path parameter in yml and py
 19. Add put method to put first name and time stamp by using put and people.update() methods
+20. Add delete method
