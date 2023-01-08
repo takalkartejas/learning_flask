@@ -51,3 +51,4 @@ Create a REST API to keep track of the notes for people that visit thoughout the
 15. Add post method in swagger.yml
 16. Create a create() method in people.py to support this post method
 17. check if the method works at http://localhost:8000/api/ui
+18. Add get method to get name using path parameter in yml and py

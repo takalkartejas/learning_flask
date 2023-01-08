@@ -39,7 +39,7 @@ paths:
       tags:
         - People
       summary: "Create a person"
-      # we request body to server
+      #  Request body is shown by the server
       requestBody:
           description: "Person to create"
           required: True
@@ -54,13 +54,15 @@ paths:
       #Search for mozilla documentation for http respone status codes
         "201":
           description: "Successfully created person"
-  # this method gets a person using last name
+  # this method gets a person using last name      
   /people/{lname}:
     get:
       operationId: "people.read_one"
+      #tag is grouping the methods together in UI
       tags:
         - People
       summary: "Read one person"
+      # maybe this parameter is passed to the read.one funtion
       parameters:
         - $ref: "#/components/parameters/lname"
       responses:

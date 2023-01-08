@@ -79,6 +79,14 @@ def create(person):
             f"Person with last name {lname} already exists",
 
         )
+        
+def read_one(lname):
+    if lname in PEOPLE:
+        return PEOPLE[lname]
+    else:
+        abort(
+            404, f"Person with last name {lname} not found"
+        )
  #Note: A person’s last name must be unique, because you’re using lname
  # as a dictionary key of PEOPLE. That means you can’t have two people 
  # with the same last name in your project for now.
