@@ -48,6 +48,8 @@ paths:
           #as the data exchange format of your API.
             application/json:
               schema:
+              # this is the name of the
+              # parameted which is passed to the python file
                 x-body-name: "person"
                 $ref: "#/components/schemas/Person"
       responses:
@@ -68,6 +70,25 @@ paths:
       responses:
         "200":
           description: "Successfully read person"
+    put:
+      tags:
+        - People
+      operationId: "people.update"
+      summary: "Update a person"
+      parameters:
+      # the first parameter passed will be the last name
+      # of the person whos data is to be changed
+        - $ref: "#/components/parameters/lname"
+      responses:
+        "200":
+          description: "Successfully updated person"
+      requestBody:
+        content:
+          application/json:
+            schema:
+            # the second parameter that is passed is a person
+              x-body-name: "person"
+              $ref: "#/components/schemas/Person"
 
 components:
   schemas:
