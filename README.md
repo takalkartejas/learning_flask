@@ -49,3 +49,5 @@ Create a REST API to keep track of the notes for people that visit thoughout the
 13. go to http://localhost:8000/api/ui to see the swagger interface
 14. create a schema for a person in swagger.yml
 15. Add post method in swagger.yml
+16. Create a create() method in people.py to support this post method
+17. check if the method works at http://localhost:8000/api/ui

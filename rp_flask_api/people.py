@@ -1,6 +1,7 @@
 # people.py
 
 from datetime import datetime
+from flask import abort
 
 #this function generates a string representation of the current timestamp
 def get_timestamp():
@@ -46,3 +47,38 @@ PEOPLE = {
 def read_all():
 
     return list(PEOPLE.values())
+
+
+def create(person):
+
+    lname = person.get("lname")
+
+    fname = person.get("fname", "")
+
+# if the lastname exists and it is not already in the list
+    if lname and lname not in PEOPLE:
+
+        PEOPLE[lname] = {
+
+            "lname": lname,
+
+            "fname": fname,
+
+            "timestamp": get_timestamp(),
+
+        }
+
+        return PEOPLE[lname], 201
+
+    else:
+# abort funtion used to send the error response
+        abort(
+
+            406,
+
+            f"Person with last name {lname} already exists",
+
+        )
+ #Note: A person’s last name must be unique, because you’re using lname
+ # as a dictionary key of PEOPLE. That means you can’t have two people 
+ # with the same last name in your project for now.
