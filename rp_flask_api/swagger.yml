@@ -14,6 +14,7 @@ paths:
   # /people: The relative URL of your API endpoint
   #URL endpoint that you can access at http://localhost:8000/api/people
   /people:
+  #this method gets all people
     get:
     # operationId: The Python function that’ll respond to the request
     #operationId must contain a string. Connexion will use ...
@@ -53,6 +54,18 @@ paths:
       #Search for mozilla documentation for http respone status codes
         "201":
           description: "Successfully created person"
+  # this method gets a person using last name
+  /people/{lname}:
+    get:
+      operationId: "people.read_one"
+      tags:
+        - People
+      summary: "Read one person"
+      parameters:
+        - $ref: "#/components/parameters/lname"
+      responses:
+        "200":
+          description: "Successfully read person"
 
 components:
   schemas:
@@ -67,5 +80,15 @@ components:
           type: "string"
         lname:
           type: "string"
-    
+  parameters:
+    lname:
+    # the name shows up in the name column in get
+      name: "lname"
+      description: "Last name of the person to get"
+      # it is a path parameter 
+      #i.e. we give it in the path of url
+      in: path
+      required: True
+      schema:
+        type: "string"
 # ...
